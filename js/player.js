@@ -65,8 +65,8 @@ function elt(name, attributes) {
   return node;
 }
 
-var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:40px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
-	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block Mode";}else{btnOnPage=true;addBTN.textContent="Add Block Mode"}});
+var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
+	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
 if(navigator.platform=="iPad"||navigator.platform=="iPhone"||navigator.platform=="iPod"||window.confirm("Do you want to use mobile controls")){
 	setTimeout(function (){document.body.appendChild(addBTN);},1000);
 }
@@ -78,9 +78,9 @@ Player.prototype.setInputCanvas = function( id )
 	
 	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
 	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
-	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.touches[e.touches.length-1].pageY, MOUSE.DOWN, btnOnPage); return false; }
-	canvas.ontouchend = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.touches[e.touches.length-1].pageY, MOUSE.UP,btnOnPage); return false; }
-	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.touches[e.touches.length-1].pageY, MOUSE.MOVE, btnOnPage ); return false; }
+	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.pageY, MOUSE.DOWN, btnOnPage); return false; }
+	canvas.ontouchend = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.pageY, MOUSE.UP,btnOnPage); return false; }
+	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.pageY, MOUSE.MOVE, btnOnPage ); return false; }
 
 	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
 	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
