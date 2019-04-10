@@ -67,7 +67,8 @@ function elt(name, attributes) {
 
 var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
-	setTimeout(function (){document.body.appendChild(addBTN);},1000);
+var backBTN=elt("button",{onclick:"window.history.back();",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
+  setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);},1000);
 
 Player.prototype.setInputCanvas = function( id )
 {
@@ -81,9 +82,9 @@ Player.prototype.setInputCanvas = function( id )
 	canvas.ontouchend = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.pageY, MOUSE.UP,btnOnPage); return false; }
 	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.touches[e.touches.length-1].pageX, e.pageY, MOUSE.MOVE, btnOnPage ); return false; }
 
-	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
-	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
-	canvas.onmousemove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, e.which == 3 ); return false; }
+	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, btnOnPage ); return false; }
+	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, btnOnPage ); return false; }
+	canvas.onmousemove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, btnOnPage ); return false; }
 }
 
 // setMaterialSelector( id )
