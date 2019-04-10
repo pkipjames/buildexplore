@@ -63,17 +63,19 @@ function elt(name, attributes) {
   }
   return node;
 }
+
+var addBTN=elt("button",{style:"position:fixed;bottom:0px;left:0px;"},"Click and hold this button while clicking a location to add block");
+	addBTN.addEventListener("touchstart",function (){btnOnPage=true;});
+	addBTN.addEventListener("touchend",function (){btnOnPage=false;});
+if(navigator.appName==="iPad"&&navigator.appName==="iPhone"&&navigator.appName==="iPod"&&window.confirm("Do you want to use mobile controls")){
+	document.body.appendChild(addBTN);
+}
 Player.prototype.setInputCanvas = function( id )
 {
 	var canvas = this.canvas = document.getElementById( id );
 
 	var t = this;
-	var addBTN=elt("button",{style:"position:fixed;top:0px;left:0px;"},"Click and hold this button while clicking a location to add block");
-	addBTN.addEventListener("touchstart",function (){btnOnPage=true;});
-	addBTN.addEventListener("touchend",function (){btnOnPage=false;});
-if(navigator.appName==="iPad"&&navigator.appName==="iPhone"&&navigator.appName==="iPod"&&window.confirm("Do you want to use mobile controls")){
-	document.appendChild(addBTN);
-}
+	
 	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
 	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
 	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.DOWN, btnOnPage); return false; }
