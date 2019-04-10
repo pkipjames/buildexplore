@@ -68,7 +68,7 @@ function elt(name, attributes) {
 var addBTN=elt("button",{style:"position:fixed;bottom:20px;font-size:16px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Click and hold this button while clicking a location to add block");
 	addBTN.addEventListener("touchstart",function (){btnOnPage=true;});
 	addBTN.addEventListener("touchend",function (){btnOnPage=false;});
-if(navigator.appName==="iPad"&&navigator.appName==="iPhone"&&navigator.appName==="iPod"&&window.confirm("Do you want to use mobile controls")){
+if(navigator.appName==="iPad"||navigator.appName==="iPhone"||navigator.appName==="iPod"||window.confirm("Do you want to use mobile controls")){
 	document.body.appendChild(addBTN);
 }
 Player.prototype.setInputCanvas = function( id )
