@@ -69,7 +69,7 @@ var addBTN=elt("button",{style:"position:fixed;bottom:20px;font-size:16px;paddin
 	addBTN.addEventListener("touchstart",function (){btnOnPage=true;});
 	addBTN.addEventListener("touchend",function (){btnOnPage=false;});
 if(navigator.platform=="iPad"||navigator.platform=="iPhone"||navigator.platform=="iPod"||window.confirm("Do you want to use mobile controls")){
-	document.body.appendChild(addBTN);
+	setTimeout(function (){document.body.appendChild(addBTN);},1000);
 }
 Player.prototype.setInputCanvas = function( id )
 {
