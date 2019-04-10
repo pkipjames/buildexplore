@@ -6,10 +6,22 @@ WebCraft (HTML5 Minecraft)
 [![GitHub license](https://img.shields.io/github/license/Overv/WebCraft.svg)](https://github.com/Overv/WebCraft/blob/master/LICENSE)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce6335d88c8072a3f1d3/maintainability)](https://codeclimate.com/github/WarenGonzaga/WebCraft/maintainability)
 
-**This project is no longer actively maintained!**
+
+<a href="https://pkipjames.github.io/WebCraft/singleplayer.html">Single Player</a>
+<a href="https://pkipjames.github.io/WebCraft/multiplayer.html">Multiplayer</a>
+Controls:
+WSAD keys to move around
+Click and drag the mouse to change the view
+Number keys or mouse wheel to change the current block type
+Left click to place a block of the current type
+Right click or ctrl-click to remove a block
+Alt-enter to toggle fullscreen mode/mouse lock
+O to change options (like your name)
+T to chat
 
 This project is intended to become a Minecraft Classic clone using HTML 5 technologies, most notably WebGL and WebSockets. No third-party libraries are used, with the exception of glmatrix and socket.io. People who have written similar demos used libraries such as *three.js*, but it is
 both foolish and inefficient to use a 3D engine for rendering large amount of blocks.
+
 
 Screenshots
 ---------------------
