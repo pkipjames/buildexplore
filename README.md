@@ -8,9 +8,9 @@ WebCraft (HTML5 Minecraft)
 Game
 ---------------------
 
-[![Play Single Player](https://img.shields.io/github/license/Overv/WebCraft.svg)](https://pkipjames.github.io/WebCraft/singleplayer.html)
-
-[![Play MultiPlayer](https://img.shields.io/github/license/Overv/WebCraft.svg)](https://pkipjames.github.io/WebCraft/multiplayer.html)
+<a href="https://pkipjames.github.io/WebCraft/singleplayer.html">Play Single Player Mode</a>
+<br/>
+<a href="https://pkipjames.github.io/WebCraft/multiplayer.html">Play Multiplayer Mode</a>
 
 
 Controls:
