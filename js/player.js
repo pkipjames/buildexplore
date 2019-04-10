@@ -4,6 +4,7 @@
 // This class contains the code that manages the local player.
 // ==========================================
 
+
 // Mouse event enumeration
 MOUSE = {};
 MOUSE.DOWN = 1;
