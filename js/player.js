@@ -67,9 +67,8 @@ function elt(name, attributes) {
 
 var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
-if(navigator.platform=="iPad"||navigator.platform=="iPhone"||navigator.platform=="iPod"||window.confirm("Do you want to use mobile controls")){
 	setTimeout(function (){document.body.appendChild(addBTN);},1000);
-}
+
 Player.prototype.setInputCanvas = function( id )
 {
 	var canvas = this.canvas = document.getElementById( id );
