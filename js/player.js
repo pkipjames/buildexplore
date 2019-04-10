@@ -10,6 +10,7 @@ MOUSE.DOWN = 1;
 MOUSE.UP = 2;
 MOUSE.MOVE = 3;
 
+
 // Constructor()
 //
 // Creates a new local player manager.
@@ -47,14 +48,33 @@ Player.prototype.setClient = function( client )
 // setInputCanvas( id )
 //
 // Set the canvas the renderer uses for some input operations.
-
+function elt(name, attributes) {
+  var node = document.createElement(name);
+  if (attributes) {
+    for (var attr in attributes)
+      if (attributes.hasOwnProperty(attr))
+        node.setAttribute(attr, attributes[attr]);
+  }
+  for (var i = 2; i < arguments.length; i++) {
+    var child = arguments[i];
+    if (typeof child == "string")
+      child = document.createTextNode(child);
+    node.appendChild(child);
+  }
+  return node;
+}
 Player.prototype.setInputCanvas = function( id )
 {
 	var canvas = this.canvas = document.getElementById( id );
 
 	var t = this;
+
 	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
 	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
+	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
+	canvas.ontouchend = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
+	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, e.which == 3 ); return false; }
+
 	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
 	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
 	canvas.onmousemove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, e.which == 3 ); return false; }
