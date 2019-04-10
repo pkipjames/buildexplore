@@ -69,7 +69,7 @@ var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
 var backBTN=elt("button",{onclick:"window.history.back();",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
  var mobileCallKeyboardinput=elt("input",{type:"text",style:"position:fixed;top:-1000px;"});
-var keyboardBTN=elt("button",{style:"position:fixed;bottom:70px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Call Mobile Keyboard");
+var keyboardBTN=elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Call Mobile Keyboard");
 keyboardBTN.addEventListener("click",function (){mobileCallKeyboardinput.focus();});
 
 setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(mobileCallKeyboardinput);document.body.appendChild(keyboardBTN);mobileCallKeyboardinput.focus();},1000);
@@ -83,8 +83,8 @@ Player.prototype.setInputCanvas = function( id )
 	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
 	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
 	
-	mobileCallKeyboardinput.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
-	mobileCallKeyboardinput.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
+	mobileCallKeyboardinput.onkeydown = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
+	mobileCallKeyboardinput.onkeyup = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
 	
 	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.DOWN, btnOnPage); return false; }
 	canvas.ontouchend = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.UP,btnOnPage); return false; }
