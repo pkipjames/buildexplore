@@ -64,7 +64,7 @@ function elt(name, attributes) {
   return node;
 }
 
-var addBTN=elt("button",{style:"position:fixed;bottom:0px;left:0px;"},"Click and hold this button while clicking a location to add block");
+var addBTN=elt("button",{style:"position:fixed;bottom:0px;left:0px;z-index:199;"},"Click and hold this button while clicking a location to add block");
 	addBTN.addEventListener("touchstart",function (){btnOnPage=true;});
 	addBTN.addEventListener("touchend",function (){btnOnPage=false;});
 if(navigator.appName==="iPad"&&navigator.appName==="iPhone"&&navigator.appName==="iPod"&&window.confirm("Do you want to use mobile controls")){
