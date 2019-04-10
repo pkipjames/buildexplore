@@ -71,9 +71,9 @@ Player.prototype.setInputCanvas = function( id )
 
 	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
 	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
-	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
-	canvas.ontouchend = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
-	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, e.which == 3 ); return false; }
+	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.DOWN, e.which == 3 ); return false; }
+	canvas.ontouchend = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.UP, e.which == 3 ); return false; }
+	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.MOVE, e.which == 3 ); return false; }
 
 	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, e.which == 3 ); return false; }
 	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, e.which == 3 ); return false; }
