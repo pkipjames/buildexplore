@@ -244,7 +244,7 @@ BLOCK.SPONGE = {
 };
 
 // Water
-BLOCK.GLASS = {
+BLOCK.WATER = {
 	id: 19,
 	spawnable: true,
 	transparent: true,
