@@ -74,6 +74,15 @@ Physics.prototype.simulate = function()
 							world.setBlock( x + 1, y, z, material );
 							newFluidBlocks[(x+1)+","+y+","+z] = true;
 						}
+						if ( y > 0 && blocks[x][y-1][z] == BLOCK.WATER ) {
+							world.setBlock( x, y - 1, z, material );
+							newFluidBlocks[x+","+(y-1)+","+z] = true;
+						}
+						if ( y < world.sy - 1 && blocks[x][y+1][z] == BLOCK.WATER ) {
+							world.setBlock( x, y + 1, z, material );
+							newFluidBlocks[x+","+(y+1)+","+z] = true;
+						}
+					}
 						if ( y > 0 && blocks[x][y-1][z] == BLOCK.AIR ) {
 							world.setBlock( x, y - 1, z, material );
 							newFluidBlocks[x+","+(y-1)+","+z] = true;
