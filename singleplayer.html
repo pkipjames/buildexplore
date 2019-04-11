@@ -53,7 +53,7 @@
 		<!-- Initialisation code -->
 		<script type="text/javascript">			
 			// Create a new flat world
-			var world = new World( 1000, 1000, 100 );
+			var world = new World( 100, 100, 100 );
 			world.createFlatWorld( 6 );
 			
 			// Set up renderer
@@ -91,6 +91,7 @@
 				
 				while ( new Date().getTime() / 1000 - time < 0.016 );
 			}, 1 );
+			setTimeout(function (){world.sx=1000;world.sy=1000;world.sz=200;},1000);
 		</script>
 		<audio id="audioPlayer1" loop autoplay volume="0.5">
 			<source src="media/track1.ogg" type="audio/ogg" />
