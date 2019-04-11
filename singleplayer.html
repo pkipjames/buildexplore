@@ -64,9 +64,8 @@
 		
 		<!-- Initialisation code -->
 		<script type="text/javascript">	
-			var webKeepExpandingTheWorldForALongTimeRun=true;
 			// Create a new flat world
-			var world = new World( 100, 100, 100 );
+			var world = new World( 500, 500, 500 );
 			world.createFlatWorld( 6 );
 			
 			// Set up renderer
@@ -104,21 +103,7 @@
 				
 				while ( new Date().getTime() / 1000 - time < 0.016 );
 			}, 1 );
-			function webKeepExpandingTheWorldForALongTime(){
-				try{if(webKeepExpandingTheWorldForALongTimeRun){
-				       world.sx+=1;
-				       world.sy+=1;
-				       world.sz=world.sz;
-			               if(world.sx==80000000){webKeepExpandingTheWorldForALongTimeRun=false;}
-				
-				setTimeout(webKeepExpandingTheWorldForALongTime,10000);
-				}
-				}catch(err){console.error(err);}
-			}
-			setTimeout(function (){
-				webKeepExpandingTheWorldForALongTime();
-				
-			},10000);
+			
 		</script>
 		<audio id="audioPlayer1" volume="0.3">
 			<source src="media/track1.ogg" type="audio/ogg" />
