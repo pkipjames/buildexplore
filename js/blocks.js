@@ -243,6 +243,17 @@ BLOCK.SPONGE = {
 	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 0/16, 3/16, 1/16, 4/16 ]; }
 };
 
+// Water
+BLOCK.GLASS = {
+	id: 19,
+	spawnable: true,
+	transparent: true,
+	selflit: false,
+	gravity: true,
+	fluid: true,
+	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 1/16, 3/16, 2/16, 4/16 ]; }
+};
+
 // fromId( id )
 //
 // Returns a block structure for the given id.
@@ -254,6 +265,7 @@ BLOCK.fromId = function( id )
 			return BLOCK[mat];
 	return null;
 }
+
 
 // pushVertices( vertices, world, lightmap, x, y, z )
 //
