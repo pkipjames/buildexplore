@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>WebCraft</title>
+	<title>BuildExplore</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="icon" href="icon.png" />
-<link rel="shortcut-icon" href="icon.png" />
 
-	
+      <meta name="mobile-web-app-capable" content="yes" />
+		<!-- Character encoding -->
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		
+		<!-- Stylesheet -->
+		
 <meta name="apple-mobile-web-app-capable" content="yes" />
 	
       <meta name="mobile-web-app-capable" content="yes" />
@@ -23,26 +28,84 @@
 <link rel="touch-startup-image" href="icon.png" />
 
 <link rel="shortcut-icon" href="icon.png" />
-	<meta name="keywords" content="minecraft,webcraft,game,webapp,html5" />
-	<meta name="description" content="WebCraft is a web-based version of a game very similar to Minecraft." />
+
+		<meta name="keywords" content="minecraft,webcraft,game,webapp,html5,BuildExplore" />
+	<meta name="description" content="BuildExplore is a web-based modiefied version of a game very similar to Minecraft, called WebCraft." />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	<style>
+			* { font-family: Ubuntu; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+		h1 { font-family: Ubuntu; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Ubuntu; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Ubuntu; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Ubuntu; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Ubuntu; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+button {
+  background: #c0c0c0;
+  background-image: -webkit-linear-gradient(top, #c0c0c0, #000000);
+  background-image: -moz-linear-gradient(top, #c0c0c0, #000000);
+  background-image: -ms-linear-gradient(top, #c0c0c0, #000000);
+  background-image: -o-linear-gradient(top, #c0c0c0, #000000);
+  background-image: linear-gradient(to bottom, #c0c0c0, #000000);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  text-shadow: 0px 1px 1px #000000;
+  -webkit-box-shadow: 0px 1px 0px #000000;
+  -moz-box-shadow: 0px 1px 0px #000000;
+  box-shadow: 0px 1px 0px #000000;
+  font-family: Ubuntu,sans-serif;
+  color: #ffffff;
+  font-size: 29px;
+  padding: 5px 5px 5px 5px;
+  border: solid #000000 1px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #c0c0c0);
+  background-image: -moz-linear-gradient(top, #000000, #c0c0c0);
+  background-image: -ms-linear-gradient(top, #000000, #c0c0c0);
+  background-image: -o-linear-gradient(top, #000000, #c0c0c0);
+  background-image: linear-gradient(to bottom, #000000, #c0c0c0);
+  text-decoration: none;
+}
+	.navMenu {
+		/*Navmenu style*/
+		z-index:10;
+		}
+	.navMenu ul {
+		list-style-type:none;
+		list-style-position:inside;
+		}
+.navMenu li{
+		list-style-type:none;
+		list-style-position:inside;
+		}
+.navMenu ul li {
+		list-style-type:none;
+		list-style-position:inside;
+		}
+			
+	</style>
 </head>
+
 <body>
 
-<h1>WebCraft</h1>
-<button onclick="location.href='https://pkipjames.github.io/WebCraft/singleplayer.html';">Play Single Player Mode</button>
+<h1>BuildExplore</h1>
+<button style="position:fixed;top:100px;text-align:center;" onclick="location.href='https://pkipjames.github.io/WebCraft/singleplayer.html';">Play (Single Player)</button>
 <br/>
-<button onclick="location.href='https://pkipjames.github.io/WebCraft/multiplayer.html';">Play Multiplayer Mode</button>
+<button style="position:fixed;top:190px;text-align:center;" onclick="location.href='https://pkipjames.github.io/WebCraft/multiplayer.html';">Play (Multiplayer Mode)</button>
 
 
-<h1>Controls</h1>
-<ul>
+	<details style="position:fixed;top:0px;left:0px;margin:0px;padding:0px;background-color:#000000;color:#ffffff;" class="navMenu">
+		<summary>Menu</summary>
+		<ul>
+			<li><details><summary>Game COntrols</summary>
+				<ul>
 <li>WSAD keys to move around</li>
 <li>Click and drag the mouse to change the view</li>
-<li>Number keys or mouse wheel to change the current block type</li>
 <li>Left click to place a block of the current type</li>
-<li>Alt-enter to toggle fullscreen mode/mouse lock</li>
-<li>O to change options (like your name)</li>
-<li>T to chat</li>
 </ul>
+				</ul></details>
+		</ul>
+			</details>
 </body>
 </html>
