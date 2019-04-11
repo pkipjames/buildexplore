@@ -21,7 +21,7 @@ function Physics()
 Physics.prototype.setWorld = function( world )
 {
 	this.world = world;
-}
+};
 
 // simulate()
 //
@@ -92,8 +92,8 @@ Physics.prototype.simulate = function()
 							newFluidBlocks[x+","+(y+1)+","+z] = true;
 						}
 					}
-				}
+				
 			}
 		}
 	}
-}
+};
