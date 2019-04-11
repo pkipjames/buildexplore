@@ -39,6 +39,18 @@
 		<script src="js/render.js" type="text/javascript"></script>
 		<script src="js/physics.js" type="text/javascript"></script>
 		<script src="js/player.js" type="text/javascript"></script>
+		<script>
+			window.onload=function (){try{
+				document.querySelector("#audioPlayer1").play();
+				try{
+				document.querySelector("#audioPlayer1").onend=function (){
+				document.querySelector("#audioPlayer1").play();
+				};
+
+				}catch(err){console.error(err);}
+			}catch(err){alert(err);}
+			};
+		</script>
 	</head>
 	
 	<body oncontextmenu="return false">
@@ -92,7 +104,7 @@
 				while ( new Date().getTime() / 1000 - time < 0.016 );
 			}, 1 );
 		</script>
-		<audio id="audioPlayer1" loop autoplay volume="0.5">
+		<audio id="audioPlayer1" volume="0.3">
 			<source src="media/track1.ogg" type="audio/ogg" />
 			<source src="media/track1.mp4" type="audio/mpeg" />
 		</audio>
