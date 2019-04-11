@@ -67,12 +67,17 @@ function elt(name, attributes) {
 
 var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
-var backBTN=elt("button",{onclick:"window.history.back();",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
+var backBTN=elt("button",{onclick:"location.href='index.html';",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
  var mobileCallKeyboardinput=elt("input",{type:"text",style:"position:fixed;top:-1000px;"});
-var keyboardBTN=elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Call Mobile Keyboard");
-keyboardBTN.addEventListener("click",function (){mobileCallKeyboardinput.focus();});
+var jumpBTN=elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Jump");
+jumpBTN.onmousedown=function(){t.onKeyEvent( 32, true ); };
+jumpBTN.onmouseup=function(){t.onKeyEvent( 32, false ); };
+jumpBTN.ontouchstart=function(){t.onKeyEvent( 32, true ); };
+jumpBTN.ontouchend=function(){t.onKeyEvent( 32, false ); };
 
-setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(mobileCallKeyboardinput);document.body.appendChild(keyboardBTN);mobileCallKeyboardinput.focus();},1000);
+
+
+setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);},1000);
 
 Player.prototype.setInputCanvas = function( id )
 {
@@ -149,9 +154,20 @@ Player.prototype.on = function( event, callback )
 
 Player.prototype.onKeyEvent = function( keyCode, down )
 {
+	
 	var key = String.fromCharCode( keyCode ).toLowerCase();
-	this.keys[key] = down;
+	if(keyCode==37){
+		this.keys["left"] = down;
+	}else if (keyCode==38){
+		this.keys["up"]=down;
+	}else if (keyCode==39){
+		this.keys["right"]=down;
+	}else if (keyCode==40){
+		this.keys["down"]=down;
+	}else{
+	this.keys[key] = down;}
 	this.keys[keyCode] = down;
+	
 	
 	if ( !down && key == "t" && this.eventHandlers["openChat"] ) this.eventHandlers.openChat();
 }
@@ -248,19 +264,19 @@ Player.prototype.update = function()
 		var walkVelocity = new Vector( 0, 0, 0 );
 		if ( !this.falling )
 		{
-			if ( this.keys["w"] ) {
+			if ( this.keys["w"] ||this.keys["up"]) {
 				walkVelocity.x += Math.cos( Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["s"] ) {
+			if ( this.keys["s"] ||this.keys["right"]) {
 				walkVelocity.x += Math.cos( Math.PI + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI + Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["a"] ) {
+			if ( this.keys["a"] ||this.keys["right"]) {
 				walkVelocity.x += Math.cos( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["d"] ) {
+			if ( this.keys["d"] ||this.keys["down"]) {
 				walkVelocity.x += Math.cos( -Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( -Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 			}
