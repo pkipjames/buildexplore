@@ -67,7 +67,7 @@ function elt(name, attributes) {
 
 var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block"}});
-var backBTN=elt("button",{onclick:"location.href='index.html';",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
+var backBTN=elt("button",{onclick:"location.href='https://pkipjames.github.io/buildexplore/';",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
  var mobileCallKeyboardinput=elt("input",{type:"text",style:"position:fixed;top:-1000px;"});
 var jumpBTN=elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Jump");
 jumpBTN.onmousedown=function(){t.onKeyEvent( 32, true ); };
