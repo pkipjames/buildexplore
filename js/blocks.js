@@ -243,6 +243,16 @@ BLOCK.SPONGE = {
 	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 0/16, 3/16, 1/16, 4/16 ]; }
 };
 
+// Water
+BLOCK.WATER = {
+	id: 19,
+	spawnable: true,
+	transparent: true,
+	selflit: false,
+	gravity: true,
+	fluid: true,
+	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 1/16, 3/16, 2/16, 4/16 ]; }
+};
 
 // fromId( id )
 //
