@@ -249,7 +249,7 @@ BLOCK.WATER = {
 	spawnable: true,
 	transparent: true,
 	selflit: false,
-	gravity: true,
+	gravity: false,
 	fluid: true,
 	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 1/16, 3/16, 2/16, 4/16 ]; }
 };
