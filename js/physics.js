@@ -82,7 +82,7 @@ Physics.prototype.simulate = function()
 							world.setBlock( x, y + 1, z, material );
 							newFluidBlocks[x+","+(y+1)+","+z] = true;
 						}
-					}
+					
 						if ( y > 0 && blocks[x][y-1][z] == BLOCK.AIR ) {
 							world.setBlock( x, y - 1, z, material );
 							newFluidBlocks[x+","+(y-1)+","+z] = true;
@@ -92,7 +92,7 @@ Physics.prototype.simulate = function()
 							newFluidBlocks[x+","+(y+1)+","+z] = true;
 						}
 					}
-				
+				}
 			}
 		}
 	}
