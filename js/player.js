@@ -161,9 +161,9 @@ Player.prototype.onKeyEvent = function( keyCode, down )
 	}else if (keyCode==38){
 		this.keys["up"]=down;
 	}else if (keyCode==39){
-		this.keys["right"]=down;
-	}else if (keyCode==40){
 		this.keys["down"]=down;
+	}else if (keyCode==40){
+		this.keys["right"]=down;
 	}else{
 	this.keys[key] = down;}
 	this.keys[keyCode] = down;
