@@ -272,7 +272,7 @@ Player.prototype.update = function()
 				walkVelocity.x += Math.cos( Math.PI + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI + Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["a"] ||this.keys["right"]) {
+			if ( this.keys["a"] ||this.keys["left"]) {
 				walkVelocity.x += Math.cos( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 			}
