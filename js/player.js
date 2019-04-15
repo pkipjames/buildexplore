@@ -179,7 +179,7 @@ rightBTN.ontouchend=function (event){
 
 };
 
-var mobileControls=elt("table",{style:"postion:fixed;width:100px;height:100px;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;"},elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN));
+var mobileControls=elt("table",{style:"postion:fixed;width:100px;height:100px;z-index:199;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;"},elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN));
 
 setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);document.body.appendChild(mobileControls);},1000);
 
