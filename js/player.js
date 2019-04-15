@@ -75,9 +75,113 @@ jumpBTN.onmouseup=function(){t.onKeyEvent( 32, false ); };
 jumpBTN.ontouchstart=function(){t.onKeyEvent( 32, true ); };
 jumpBTN.ontouchend=function(){t.onKeyEvent( 32, false ); };
 
+var upBTN=elt("td",{colspan:2,style:"text-align:center;"},"/\");
 
+upBTN.onmousedown=function (event){
 
-setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);},1000);
+ t.onKeyEvent(38, true );
+
+};
+
+upBTN.onmousedown=function (event){
+
+ t.onKeyEvent(38, false );
+
+};
+
+upBTN.ontouchstart=function (event){
+
+ t.onKeyEvent(38, true );
+
+};
+
+upBTN.ontouchend=function (event){
+
+ t.onKeyEvent(38, false );
+
+};
+
+var downBTN=elt("td",{colspan:2,style:"text-align:center;"},"\/");
+
+downBTN.onmousedown=function (event){
+
+ t.onKeyEvent(40, true );
+
+};
+
+downBTN.onmousedown=function (event){
+
+ t.onKeyEvent(40, false );
+
+};
+
+downBTN.ontouchstart=function (event){
+
+ t.onKeyEvent(40, true );
+
+};
+
+downBTN.ontouchend=function (event){
+
+ t.onKeyEvent(40, false );
+
+};
+
+var leftBTN=elt("td",{style:"text-align:center;"},"<");
+
+leftBTN.onmousedown=function (event){
+
+ t.onKeyEvent(37, true );
+
+};
+
+leftBTN.onmousedown=function (event){
+
+ t.onKeyEvent(37, false );
+
+};
+
+leftBTN.ontouchstart=function (event){
+
+ t.onKeyEvent(37, true );
+
+};
+
+leftBTN.ontouchend=function (event){
+
+ t.onKeyEvent(37, false );
+
+};
+
+var rightBTN=elt("td",{style:"text-align:center;"},"<");
+
+rightBTN.onmousedown=function (event){
+
+ t.onKeyEvent(39, true );
+
+};
+
+rightBTN.onmousedown=function (event){
+
+ t.onKeyEvent(39, false );
+
+};
+
+rightBTN.ontouchstart=function (event){
+
+ t.onKeyEvent(39, true );
+
+};
+
+rightBTN.ontouchend=function (event){
+
+ t.onKeyEvent(39, false );
+
+};
+
+var mobileControls=elt("table",{style:"postion:fixed;width:100px;height:100px;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;"},elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN));
+
+setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);document.body.appendChild(mobileControls);},1000);
 
 Player.prototype.setInputCanvas = function( id )
 {
@@ -161,9 +265,9 @@ Player.prototype.onKeyEvent = function( keyCode, down )
 	}else if (keyCode==38){
 		this.keys["up"]=down;
 	}else if (keyCode==39){
-		this.keys["down"]=down;
-	}else if (keyCode==40){
 		this.keys["right"]=down;
+	}else if (keyCode==40){
+		this.keys["down"]=down;
 	}else{
 	this.keys[key] = down;}
 	this.keys[keyCode] = down;
@@ -268,7 +372,7 @@ Player.prototype.update = function()
 				walkVelocity.x += Math.cos( Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["s"] ||this.keys["right"]) {
+			if ( this.keys["s"] ||this.keys["down"]) {
 				walkVelocity.x += Math.cos( Math.PI + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI + Math.PI / 2 - this.angles[1] );
 			}
@@ -276,7 +380,7 @@ Player.prototype.update = function()
 				walkVelocity.x += Math.cos( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 			}
-			if ( this.keys["d"] ||this.keys["down"]) {
+			if ( this.keys["d"] ||this.keys["right"]) {
 				walkVelocity.x += Math.cos( -Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 				walkVelocity.y += Math.sin( -Math.PI / 2 + Math.PI / 2 - this.angles[1] );
 			}
