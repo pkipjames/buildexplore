@@ -189,20 +189,20 @@ Player.prototype.setInputCanvas = function( id )
 
 	var t = this;
 	
-	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
-	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
+	document.onkeydown = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } };
+	document.onkeyup = function( e ) { if ( e.target.tagName != "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } };
 	
-	mobileCallKeyboardinput.onkeydown = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } }
-	mobileCallKeyboardinput.onkeyup = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } }
+	mobileCallKeyboardinput.onkeydown = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, true ); return false; } };
+	mobileCallKeyboardinput.onkeyup = function( e ) { if ( e.target.tagName == "INPUT" ) { t.onKeyEvent( e.keyCode, false ); return false; } };
 	
-	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.DOWN, btnOnPage); return false; }
-	canvas.ontouchend = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.UP,btnOnPage); return false; }
-	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.MOVE, btnOnPage ); return false; }
+	canvas.ontouchstart = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.DOWN, btnOnPage); return false; };
+	canvas.ontouchend = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.UP,btnOnPage); return false; };
+	canvas.ontouchmove = function( e ) { t.onMouseEvent( e.pageX, e.pageY, MOUSE.MOVE, btnOnPage ); return false; };
 
-	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, btnOnPage ); return false; }
-	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, btnOnPage ); return false; }
-	canvas.onmousemove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, btnOnPage ); return false; }
-}
+	canvas.onmousedown = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.DOWN, btnOnPage ); return false; };
+	canvas.onmouseup = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.UP, btnOnPage ); return false; };
+	canvas.onmousemove = function( e ) { t.onMouseEvent( e.clientX, e.clientY, MOUSE.MOVE, btnOnPage ); return false; };
+};
 
 // setMaterialSelector( id )
 //
@@ -230,7 +230,7 @@ Player.prototype.setMaterialSelector = function( id )
 				pl.prevSelector = this;
 
 				pl.buildMaterial = this.material;
-			}
+			};
 
 			if ( mat == "DIRT" ) {
 				this.prevSelector = selector;
@@ -241,7 +241,7 @@ Player.prototype.setMaterialSelector = function( id )
 			texOffset -= 70;
 		}
 	}
-}
+};
 
 // on( event, callback )
 //
@@ -250,7 +250,7 @@ Player.prototype.setMaterialSelector = function( id )
 Player.prototype.on = function( event, callback )
 {
 	this.eventHandlers[event] = callback;
-}
+};
 
 // onKeyEvent( keyCode, down )
 //
@@ -274,7 +274,7 @@ Player.prototype.onKeyEvent = function( keyCode, down )
 	
 	
 	if ( !down && key == "t" && this.eventHandlers["openChat"] ) this.eventHandlers.openChat();
-}
+};
 
 // onMouseEvent( x, y, type, rmb )
 //
@@ -301,7 +301,7 @@ Player.prototype.onMouseEvent = function( x, y, type, rmb )
 
 		this.canvas.style.cursor = "move";
 	}
-}
+};
 
 // doBlockAction( x, y )
 //
@@ -321,7 +321,7 @@ Player.prototype.doBlockAction = function( x, y, destroy )
 		else
 			obj.setBlock( block.x + block.n.x, block.y + block.n.y, block.z + block.n.z, this.buildMaterial );
 	}
-}
+};
 
 // getEyePos()
 //
@@ -330,7 +330,7 @@ Player.prototype.doBlockAction = function( x, y, destroy )
 Player.prototype.getEyePos = function()
 {
 	return this.pos.add( new Vector( 0.0, 0.0, 1.7 ) );
-}
+};
 
 // update()
 //
@@ -399,7 +399,7 @@ Player.prototype.update = function()
 	}
 
 	this.lastUpdate = new Date().getTime();
-}
+};
 
 // resolveCollision( pos, bPos, velocity )
 //
@@ -490,4 +490,4 @@ Player.prototype.resolveCollision = function( pos, bPos, velocity )
 
 	// Return solution
 	return pos.add( velocity );
-}
+};
