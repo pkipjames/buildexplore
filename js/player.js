@@ -65,11 +65,11 @@ function elt(name, attributes) {
   return node;
 }
 
-var addBTN=elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
+var addBTN =elt("button",{title:"Click To Change",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Delete Block Mode");
 	addBTN.addEventListener("click",function (){if(btnOnPage){btnOnPage=false;addBTN.textContent="Delete Block";}else{btnOnPage=true;addBTN.textContent="Add Block";}});
-var backBTN=elt("button",{onclick:"location.href='https://pkipjames.github.io/buildexplore/';",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
+var backBTN =elt("button",{onclick:"location.href='https://pkipjames.github.io/buildexplore/';",title:"Click To Go Back",style:"position:fixed;bottom:34px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;right:20px;z-index:199;"},"Exit Game");
  var mobileCallKeyboardinput=elt("input",{type:"text",style:"position:fixed;top:-1000px;"});
-var jumpBTN=elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Jump");
+var jumpBTN =elt("button",{style:"position:fixed;bottom:72px;font-size:32px;padding:0px;margin:0px;background:rgba(0,0,0,0.7);color:#ffffff;border:0px none;left:0px;z-index:199;"},"Jump");
 jumpBTN.onmousedown=function(){t.onKeyEvent( 32, true ); };
 jumpBTN.onmouseup=function(){t.onKeyEvent( 32, false ); };
 jumpBTN.ontouchstart=function(){t.onKeyEvent( 32, true ); };
@@ -179,7 +179,7 @@ rightBTN.ontouchend=function (event){
 
 };
 
-var mobileControls=elt("div",{style:"postion:fixed;width:100px;height:100px;z-index:199;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;"},elt("table",null,elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN)));
+var mobileControls=elt("div",{style:"position:fixed;width:100px;height:100px;z-index:199;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;"},elt("table",null,elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN)));
 
 setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);document.body.appendChild(mobileControls);},1000);
 
