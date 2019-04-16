@@ -79,7 +79,7 @@ var leftBTN=elt("td",{style:"text-align:center;"},"<");
 
 var rightBTN=elt("td",{style:"text-align:center;"},">");
 
-var mobileControls=elt("table",{style:"position:fixed;width:100px;height:100px;z-index:199;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;text-align:center;"},elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN));
+var mobileControls=elt("table",{style:"cursor:pointer;position:fixed;width:100px;height:100px;z-index:199;right:100px;bottom:100px;background-color:rgba(0,0,0,0.8);color:#ffffff;text-align:center;"},elt("tr",null,upBTN),elt("tr",null,leftBTN,rightBTN),elt("tr",null,downBTN));
 
 setTimeout(function (){document.body.appendChild(addBTN);document.body.appendChild(backBTN);document.body.appendChild(jumpBTN);document.body.appendChild(mobileControls);},1000);
 
@@ -171,7 +171,7 @@ leftBTN.onmousedown=function (event){
 
 };
 
-leftBTN.onmousup=function (event){
+leftBTN.onmouseup=function (event){
 
  t.onKeyEvent(37, false );
 
