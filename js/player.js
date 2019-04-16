@@ -90,8 +90,10 @@ Player.prototype.setInputCanvas = function( id )
     var t = this;
     jumpBTN.onmousedown=function(){t.onKeyEvent( 32, true ); };
 jumpBTN.onmouseup=function(){t.onKeyEvent( 32, false ); };
-jumpBTN.ontouchstart=function(){t.onKeyEvent( 32, true ); };
-jumpBTN.ontouchend=function(){t.onKeyEvent( 32, false ); };
+jumpBTN.ontouchstart=function(){event.preventDefault();
+t.onKeyEvent( 32, true ); };
+jumpBTN.ontouchend=function(){event.preventDefault();
+t.onKeyEvent( 32, false ); };
 
 upBTN.onmousedown=function (event){
 
@@ -106,19 +108,20 @@ upBTN.onmouseup=function (event){
 };
 
 upBTN.ontouchstart=function (event){
+event.preventDefault();
 
  t.onKeyEvent(38, true );
 
 };
 
 upBTN.ontouchend=function (event){
+event.preventDefault();
 
  t.onKeyEvent(38, false );
 
 };
 
 downBTN.onmousedown=function (event){
-
  t.onKeyEvent(40, true );
 
 };
@@ -130,12 +133,14 @@ downBTN.onmouseup=function (event){
 };
 
 downBTN.ontouchstart=function (event){
+event.preventDefault();
 
  t.onKeyEvent(40, true );
 
 };
 
 downBTN.ontouchend=function (event){
+event.preventDefault();
 
  t.onKeyEvent(40, false );
 
@@ -154,12 +159,14 @@ rightBTN.onmouseup=function (event){
 };
 
 rightBTN.ontouchstart=function (event){
+event.preventDefault();
 
  t.onKeyEvent(39, true );
 
 };
 
 rightBTN.ontouchend=function (event){
+event.preventDefault();
 
  t.onKeyEvent(39, false );
 
@@ -178,12 +185,14 @@ leftBTN.onmouseup=function (event){
 };
 
 leftBTN.ontouchstart=function (event){
+event.preventDefault();
 
  t.onKeyEvent(37, true );
 
 };
 
 leftBTN.ontouchend=function (event){
+event.preventDefault();
 
  t.onKeyEvent(37, false );
 
